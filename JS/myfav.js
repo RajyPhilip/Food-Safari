@@ -42,7 +42,7 @@
     img.setAttribute("src", `${meal.strMealThumb}`);
     img.setAttribute("alt", `${meal.strMeal}`);
     button.setAttribute("id", `${meal.idMeal}`);
-    button.setAttribute("href", `/mealDetails.html`);
+    button.setAttribute("href", `./mealDetails.html`);
     button.innerText = "More Details";
     button.setAttribute("class", `result-like-btn`);
     deletebtn.setAttribute("class", `result-unlike-btn`);
