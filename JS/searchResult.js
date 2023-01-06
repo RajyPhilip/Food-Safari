@@ -8,16 +8,13 @@
   );
   const myFavourites = document.getElementById("my-Fav-List");
   const favContainer = document.getElementById("my-favourites-container");
-  console.log(favContainer);
 
   //getting value 
         let value =(localStorage.getItem("searchValue"))
-        console.log(value)
     
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.meals === null) {
           resultDiv.innerHTML = `<h1 style="text-align:center;"> No Results found,try again!</h1>`;
         } else {
@@ -57,25 +54,21 @@
       if (localFav != null) {
         favMeal = localFav;
       }
-      console.log("LOCAL FAV", localFav);
       element.addEventListener("click", function () {
         const id = element.getAttribute("id");
-        console.log("favmea", favMeal);
-        console.log("favmeal after adding from local storage", favMeal);
         if (favBool) {
           favBool = false;
           favMeal.splice(favMeal.indexOf(id, 1));
-          console.log("PULLED");
+          element.innerHTML ="Like"
           //setlocalstorage the favMeal array in the local storage
           localStorage.setItem("favourite", JSON.stringify(favMeal));
         } else {
           favBool = true;
           favMeal.push(id);
-          console.log("PUSH");
+          element.innerHTML ="Unlike"
           //setlocalstorage the favMeal array in the local storage
           localStorage.setItem("favourite", JSON.stringify(favMeal));
         }
-        console.log(favMeal);
       });
     });
   }
