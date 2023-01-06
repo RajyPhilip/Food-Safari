@@ -2,7 +2,6 @@
   let section = document.getElementById("sec");
 
   let id = JSON.parse(localStorage.getItem("mealID"));
-  console.log("iddd", id);
 
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((res) => res.json())
@@ -11,8 +10,6 @@
       mealpageCreation(meal);
     });
   function mealpageCreation(meal) {
-    console.log(meal);
-    console.log("PAGE CReation start");
     const mealDetailContainer = document.createElement("div");
     mealDetailContainer.id = "meal-detail-container";
 
