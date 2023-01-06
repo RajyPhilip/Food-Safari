@@ -1,5 +1,4 @@
  {// accessing html elements
-    console.log("hn bhai page khulra hjai")
 
   const myFavourites = document.getElementById("my-Fav-List");
   const favContainer = document.getElementById("my-favourites-container");
@@ -7,18 +6,14 @@
 
   let myfav = JSON.parse(localStorage.getItem("favourite"));
 
-    console.log("myyyyy", myfav);
     if (myfav == null || myfav.length == 0) {
       favContainer.innerHTML =
         "<h2 style='width: 100%; text-align: center ; color:white;'> ADD your favourite meal  by searching and Liking it</h2>";
-        console.log("%#$#@#",favContainer)
     }else{
             myfav.forEach((id) => {
-      console.log("iddddddd", id);
       fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log("DADDKGKG##", data);
           addToDom(data);
         });
     });
@@ -28,7 +23,6 @@
 
   function addToDom(data) {
     let meal = data.meals[0];
-    console.log(meal);
     // creating the elemtnts
     let div = document.createElement("div");
     let a = document.createElement("a");
@@ -59,25 +53,21 @@
     //adding more detailsevent
     button.addEventListener("click", function (e) {
       let mealid = button.getAttribute("id");
-      console.log("btn id ", mealid);
       localStorage.setItem("mealID", JSON.stringify(mealid));
     });
     //adding unlike event
     deletebtn.addEventListener("click", function (e) {
       let myfav = JSON.parse(localStorage.getItem("favourite"));
-      console.log("BEFORE SPLICING", myfav);
       const id = deletebtn.getAttribute("id");
       //find in local if id found then pull fr
       let index = myfav.indexOf(id);
       if (index !== -1) {
-        console.log("SPLICING");
         myfav.splice(index, 1);
       }
       localStorage.setItem("favourite", JSON.stringify(myfav));
       //   location.reload();
       //   myFavourites.scrollIntoView();
       deletebtn.innerHTML = "Unliked";
-      console.log("myy ffaavv after removing ", myfav);
       location.reload()
     });
     //adding it to the favlist container
