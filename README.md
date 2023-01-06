@@ -38,6 +38,7 @@ http
 http
 // Details API Link: www.themealdb.com/api/json/v1/1/lookup.php?i=${ id of meal }
 
-## Demo
+## -> GitHub hosted Link :
 
-Insert gif or link to demo
+```http
+https://rajyphilip.github.io/Food-Safari/```
