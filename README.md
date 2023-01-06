@@ -41,4 +41,4 @@ http
 ## -> GitHub hosted Link :
 
 ```http
-https://rajyphilip.github.io/Food-Safari/```
+https://rajyphilip.github.io/Food-Safari/
