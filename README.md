@@ -33,12 +33,12 @@ https://www.themealdb.com/
 http
 // Search API Link: https://www.themealdb.com/api/json/v1/1/search.php?s=${meal name}
 
-#### -> For Meal details by Meal-id:
+####  For Meal details by Meal-id:
 
 http
 // Details API Link: www.themealdb.com/api/json/v1/1/lookup.php?i=${ id of meal }
 
-## -> GitHub hosted Link :
+##  GitHub hosted Link :
 
 ```http
 https://rajyphilip.github.io/Food-Safari/
