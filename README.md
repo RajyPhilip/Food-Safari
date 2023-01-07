@@ -28,7 +28,7 @@ https://www.themealdb.com/
 | :-------- | :------- | :---------- |
 | `api_key` | `string` | api         |
 
-#### -> For searching the Meals :
+####  For searching the Meals :
 
 http
 // Search API Link: https://www.themealdb.com/api/json/v1/1/search.php?s=${meal name}
